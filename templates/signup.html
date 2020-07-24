@@ -30,9 +30,10 @@
                 <form class="form  mx-auto my-auto align-items-center justify-content-center"  method="post">
                    <center> 
                   <img src="../static/images/logo.png" class="from-control" alt="">
-                  <input type="email" class="form-control w-75 mt-3" placeholder="Name" name="name" required>
+                  <input type="text" class="form-control w-75 mt-3" pattern="^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$" placeholder="Username" name="username"  title="5-20 characters with Characters, number, underscore or dot"  required>
+                  <input type="text" class="form-control w-75 mt-3" placeholder="Name" name="name" pattern="^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$" title="Enter a valid name." required>                  
                   <input type="email" class="form-control w-75 mt-3" placeholder="Email" name="username" required>
-                  <input type="password" class="form-control w-75 mt-3" placeholder="Password" name="password" required>
+                  <input type="password" class="form-control w-75 mt-3" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character" placeholder="Password" name="password" required>
                   <input type="Submit" class="btn btn-outline-light font-weight-bold  mt-3" name="Sign up" value="Sign up">
 
                   </form> 

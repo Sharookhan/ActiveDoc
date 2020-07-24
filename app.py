@@ -10,7 +10,7 @@ def root():
 def login():
         error=None
         if request.method == 'POST':
-           if request.form['username']!='admin@gmail.com' or request.form['password']!='password':
+           if request.form['username']!='admin' or request.form['password']!='Password@123':
                 error='Invalid Username or Password'
            else:
                 error='Success'
