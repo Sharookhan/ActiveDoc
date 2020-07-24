@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title> ActiveDoc </title>
+    <!-- Css Imports-->
+    <link rel="stylesheet" href="../static/css/master.css">
+
+     <!-- Bootstrap imports -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
+
+    </head>
+
+    <body class="">
+        <div class="container h-100">
+          <div class="row align-items-center justify-content-center  h-100">
+            <div class="col-sm-0 col-md-6 ">
+
+            </div>
+              <div class="col-sm-12 col-md-4 h-75  p-0 d-flex cover m-2">
+                
+                <form class="form border mx-auto my-auto align-items-center justify-content-center"  method="post">
+                   <center> 
+                  <img src="../static/images/logo.png" class="from-control" alt="">
+                  <input type="email" class="form-control w-75 mt-3" placeholder="Name" name="name" required>
+                  <input type="email" class="form-control w-75 mt-3" placeholder="Email" name="username" required>
+                  <input type="password" class="form-control w-75 mt-3" placeholder="Password" name="password" required>
+                  <input type="Submit" class="btn btn-outline-light font-weight-bold  mt-3" name="Signin" value="Signin">
+                  {%if error %}
+                    <p class="bg-danger text-light mt-3 w-75 rounded"> Error:  {{error}}</p>
+                  {%endif%}
+
+                  <br><br>
+
+                  <em> Not a member? <a href="signup.html">Sign up</a> now.</em></center>
+                  </form> 
+              </div>
+          </div>
+        </div>
+    </body>
+</html>

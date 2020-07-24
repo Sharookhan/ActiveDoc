@@ -1,0 +1,23 @@
+html,body{
+    min-width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding:0;
+    display: flex;
+}
+
+body{
+  background-image: url("../images/index_cover.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+
+.d-flex form{
+  flex-grow: 0.8;
+}
+
+.cover
+{
+  background-color: rgba(255,255,255,0.2);
+}
