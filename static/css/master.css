@@ -3,7 +3,11 @@ html,body{
     min-height: 100%;
     margin: 0;
     padding:0;
-    display: flex;
+}
+
+.index_html
+{
+  display: flex;
 }
 
 body{
@@ -21,3 +25,5 @@ body{
 {
   background-color: rgba(255,255,255,0.4);
 }
+
+
