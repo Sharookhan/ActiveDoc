@@ -35,6 +35,10 @@ def welcome():
 
 @app.route('/logout')    
 def logout():
+    exists = db.session.query(logindetails).filter_by(username='sharook').first()
+    if exists:
+        exists.activestatus=False
+        db.session.commit()
     session.pop('user',None)
     return redirect(url_for('root'))
 
