@@ -35,7 +35,7 @@ def welcome():
 
 @app.route('/logout')    
 def logout():
-    exists = db.session.query(logindetails).filter_by(username='sharook').first()
+    exists = db.session.query(logindetails).filter_by(username=session['user']).first()
     if exists:
         exists.activestatus=False
         db.session.commit()
