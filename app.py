@@ -14,11 +14,11 @@ db.init_app(app)
 from models import userdetails,logindetails
 @app.errorhandler(404)
 def page_not_found(e):
-    return render_template("error.html",error="Error 404")
+    return render_template("error.html",error_img="error_404",error_color="btn-outline-primary")
 
 @app.errorhandler(500)
 def page_not_found(e):
-    return render_template("error.html",error="Error 500")
+    return render_template("error.html",error_img="error_500",error_color="btn-outline-danger")
 
 
 @app.route('/')

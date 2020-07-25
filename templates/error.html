@@ -20,11 +20,9 @@
 
     </head>
 
-    <body style="background-image: url('../static/images/error.jpg') !important;background-position: center;">
-        <div class="container display-4 text-light font-weight-bold text-center my-auto">
-            {{error}}
-            <br>Sorry something went wrong.. :( <br>
-            <a class="btn btn-outline-light font-weight-bold" href="/">Click here  </a>
+    <body style="background-image: url('../static/images/{{error_img}}.jpg') !important;background-position: center;">
+        <div class="container text-light font-weight-bold text-center mt-5">
+            <a class="btn {{error_color}} font-weight-bold display-4 " href="/">Home  </a>
         </div>
     </body>
 </html>
