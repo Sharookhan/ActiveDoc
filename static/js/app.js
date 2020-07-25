@@ -23,3 +23,9 @@ $(document).ready(function()
 
     },10000);
 });
+
+$(window).load(function() {
+    // Animate loader off screen
+    alert('hello');
+    $(".se-pre-con").fadeOut("slow");;
+});

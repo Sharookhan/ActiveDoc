@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 from flask_sqlalchemy import SQLAlchemy
 from hashlib import sha256
 import random
+from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = 'Thisisthesecretkey'
@@ -39,7 +40,8 @@ def signup():
 def welcome():
     if "user" in session:
         return render_template('welcome.html')
-    return redirect(url_for('root'))    
+    else:        
+        return render_template("error.html",error_img="error_401",error_color="btn-outline-success") 
 
 @app.route('/logout')    
 def logout():
@@ -60,7 +62,12 @@ def login():
         exists=None
         exists = db.session.query(logindetails).filter(logindetails.username==uname,logindetails.password==sha256(password1.encode()).hexdigest()).first()
         if exists:
-            exists.activestatus=True
+            session['time']=exists.timestamp
+            exists.activestatus=True      
+            now=datetime.now()
+            now2 = datetime.timestamp(now)
+            dnow = datetime.fromtimestamp(now2)
+            exists.timestamp=dnow
             db.session.commit()
             session["user"]=uname
             return redirect(url_for('welcome'))
@@ -92,8 +99,11 @@ def register():
             else:
                 new_user = userdetails(username, name, email)
                 db.session.add(new_user)
-                db.session.commit()
-                login=logindetails(username,sha256(password.encode()).hexdigest(),False)
+                db.session.commit()       
+                now=datetime.now()
+                now2 = datetime.timestamp(now)
+                dnow = datetime.fromtimestamp(now2)
+                login=logindetails(username,sha256(password.encode()).hexdigest(),dnow,False)
                 db.session.add(login)
                 db.session.commit()
                 return redirect(url_for('root'))
