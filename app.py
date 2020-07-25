@@ -92,45 +92,13 @@ def register():
 
     return render_template('signup.html', error=error)
 
-def get_emoji():
-   e1="far fa-grin-beam-sweat"
-   e2="far fa-smile-wink"
-   e3="far fa-laugh-squint"
-   e4="far fa-kiss-beam"
-   e5="far fa-grin-hearts"
-   n=random.randint(1,5)
-   if n==1:
-      return e1
-   elif n==2: 
-      return e2 
-   elif n==3: 
-      return e3 
-   elif n==4:
-      return e4
-   else:
-      return e5  
 
-def get_color():
-   e1="text-danger"
-   e2="text-yellow"
-   e3="text-dark"
-   e4="text-primary"
-   e5="text-success"
-   n=random.randint(1,5)
-   if n==1:
-      return e1
-   elif n==2: 
-      return e2 
-   elif n==3: 
-      return e3 
-   elif n==4:
-      return e4
-   else:
-      return e5  
+
 
 
 @app.route('/welcome', methods=['POST'])
 def active_users():
+    emoji=["far fa-grin-beam-sweat","far fa-smile-wink","far fa-laugh-squint","far fa-kiss-beam","far fa-grin-hearts"]
     color=["text-primary","text-warning","text-dark","text-primary","text-success"]
     result=" "
     j=0
@@ -140,7 +108,7 @@ def active_users():
             str1 = '''
             <span class="fa-stack p-0" style="font-size:20px" title="'''+i[0]+'''">
             <i class="fa fa-circle fa-stack-2x '''+color[j]+'''" ></i>
-            <i class="'''+get_emoji()+''' fa-stack-1x fa-inverse"></i>
+            <i class="'''+emoji[j]+''' fa-stack-1x fa-inverse"></i>
             </span>
             '''
             j = j+1
