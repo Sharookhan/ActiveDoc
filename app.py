@@ -134,7 +134,7 @@ def active_users():
     color=["text-primary","text-warning","text-dark","text-primary","text-success"]
     result=" "
     j=0
-    active= db.session.query(userdetails.name).filter_by(username=db.session.query(logindetails.username).filter_by(activestatus=True))
+    active= db.session.query(logindetails.username).filter_by(activestatus=True)
     if active:
         for i in active:
             str1 = '''
