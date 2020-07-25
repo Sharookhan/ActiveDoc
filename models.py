@@ -15,8 +15,7 @@ class userdetails(db.Model):
 
 
 class logindetails(db.Model):
-    username = db.Column(db.String(20), db.ForeignKey(
-        'userdetails.username'), primary_key=True)
+    username = db.Column(db.String(20), db.ForeignKey('userdetails.username'), primary_key=True)
     password = db.Column(db.String(50), nullable=False)
 
     def __init___(self, username, password):

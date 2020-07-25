@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from hashlib import sha256
 
 app = Flask(__name__)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:3306/activedoc'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://fntwhugnbcksel:eb206c4c5286a6a44e0cc300e10d9adbd0b110bbda3fcb1e142dd5376149d982@ec2-52-202-66-191.compute-1.amazonaws.com:5432/d8ef42tm3os6ai'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:3306/activedoc'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 db.init_app(app)
@@ -30,10 +30,10 @@ def welcome():
 def login():
     error = None
     if request.method == 'POST':
-        username = request.form.get("username")
-        password = request.form.get("password")
+        uname = request.form.get("username")
+        password1 = request.form.get("password")
         exists=None
-        exists = db.session.query(db.engine.execute('select * from userdetails where username='+username+' AND password='+sha256(password.encode()).hexdigest()).exists()).scalar()
+        exists = db.session.query(userdetails).filter(userdetails.username==uname,userdetails.password==sha256(password1.encode()).hexdigest()).first().scaleup()
         if exists != True:
             error = 'Invalid Username or Password'
         else:
