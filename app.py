@@ -123,16 +123,17 @@ def active_users():
     active= db.session.query(logindetails.username).filter_by(activestatus=True)
     if active:
         for i in active:
+            uactive=db.session.query(userdetails).filter(userdetails.username==i[0]).first()
             str1 = '''
-            <span class="fa-stack p-0" style="font-size:20px" title="'''+i[0]+'''">
+            <span class="fa-stack p-0" style="font-size:20px" title="'''+str(uactive.name)+'''">
             <i class="fa fa-circle fa-stack-2x '''+color[j]+'''" ></i>
             <i class="'''+emoji[j]+''' fa-stack-1x fa-inverse"></i>
             </span>
             '''
+            result+=str1
             j = j+1
             if j==5:
-               j=0
-            result += str1
+                j=0
     else:
         result+='None'    
     return result

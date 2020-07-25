@@ -9,6 +9,7 @@ $(document).ready(function()
             $('#print_all').html("<b>Active users :</b> "+data);
           }
     });
+    
     setInterval(function () {
     
         $.ajax({
@@ -22,10 +23,4 @@ $(document).ready(function()
         });
 
     },10000);
-});
-
-$(window).load(function() {
-    // Animate loader off screen
-    alert('hello');
-    $(".se-pre-con").fadeOut("slow");;
 });

@@ -6,8 +6,8 @@ class userdetails(db.Model):
     name = db.Column(db.String(80),nullable=False)
     email = db.Column(db.String(80), unique=True, nullable=False)
 
-    def __init__(self, username, name, email):
-        self.username = username
+    def __init__(self, uname, name, email):
+        self.username = uname
         self.name = name
         self.email = email
 
