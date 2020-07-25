@@ -5,13 +5,21 @@ import random
 
 app = Flask(__name__)
 app.secret_key = 'Thisisthesecretkey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://fntwhugnbcksel:eb206c4c5286a6a44e0cc300e10d9adbd0b110bbda3fcb1e142dd5376149d982@ec2-52-202-66-191.compute-1.amazonaws.com:5432/d8ef42tm3os6ai'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'potgres://fntwhugnbcksel:eb206c4c5286a6a44e0cc300e10d9adbd0b110bbda3fcb1e142dd5376149d982@ec2-52-202-66-191.compute-1.amazonaws.com:5432/d8ef42tm3os6ai'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:3306/activedoc'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 db.init_app(app)
 
 from models import userdetails,logindetails
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("error.html",error="Error 404")
+
+@app.errorhandler(500)
+def page_not_found(e):
+    return render_template("error.html",error="Error 500")
+
 
 @app.route('/')
 def root():
