@@ -27,7 +27,7 @@
             <div class="col-sm-0 col-md-6 ">
 
             </div>
-              <div class="col-sm-12 col-md-4 h-75  p-0 d-flex cover m-2">
+              <div class="col-sm-12 col-md-4 h-75  p-0 d-flex cover m-2 text-light">
                 
                 <form class="form mx-auto my-auto align-items-center justify-content-center"  method="post">
                    <center> 
@@ -35,7 +35,8 @@
                   <input type="text" class="form-control w-75 mt-3" pattern="^(?=.{5,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$" placeholder="Username" name="username"  title="5-20 characters with Characters, number, underscore or dot" placeholder="Username" name="username" required>
                   <input type="password" class="form-control w-75 mt-3" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character" placeholder="Password" name="password" required>
                   <input type="Submit" class="btn btn-outline-light font-weight-bold  mt-3" name="Signin" value="Signin">
-                  {%if error %}
+                  
+                  {%if error: %}
                     <p class="bg-danger text-light mt-3 w-75 rounded"> Error:  {{error}}</p>
                   {%endif%}
 

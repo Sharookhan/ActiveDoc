@@ -25,7 +25,7 @@
             <div class="col-sm-0 col-md-6 ">
 
             </div>
-              <div class="col-sm-12 col-md-4 h-75  p-0 d-flex cover m-2">
+              <div class="col-sm-12 col-md-4 h-75  p-0 d-flex cover m-2 text-light">
                 
                 <form class="form  mx-auto my-auto align-items-center justify-content-center"  method="post">
                    <center> 
@@ -36,13 +36,17 @@
                   <input type="password" class="form-control w-75 mt-3" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character" placeholder="New Password" name="password" required>
                   <input type="password" class="form-control w-75 mt-3" pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}" title="Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character" placeholder="Confirm Password" name="cpassword" required>
                   <input type="Submit" class="btn btn-outline-light font-weight-bold  mt-3" name="Sign up" value="Sign up">
+                  
                   {%if error %}
                   <p class="bg-danger text-light mt-3 w-75 rounded"> Error:  {{error}}</p>
-                {%endif%}
-
+                  {%endif%}
+                  {%if success %}
+                  <p class="bg-Success text-light mt-3 w-75 rounded"> Successfully Registered.</p> 
+                  <em> <a href="/" class="btn btn-primary btn-sm">Sign in</a> </em>
+                  {%endif%}
                 <br><br>
 
-                <em> Already have an account? <a href="/" class="btn btn-primary btn-sm">Sign in</a> now.</em></center>
+                </center>
                   </form> 
               </div>
           </div>

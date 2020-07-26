@@ -106,9 +106,12 @@ def register():
                 login=logindetails(username,sha256(password.encode()).hexdigest(),dnow,False)
                 db.session.add(login)
                 db.session.commit()
-                return redirect(url_for('root'))
-
-    return render_template('signup.html', error=error)
+                session['reg']=True
+                
+    if error:
+        return render_template('signup.html', error=error)
+    else:
+        return render_template('signup.html', success=True)
 
 
 
