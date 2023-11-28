@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 from flask_sqlalchemy import SQLAlchemy
+import sqlalchemy.dialects.postgresql
 from hashlib import sha256
 import random
 from datetime import datetime
