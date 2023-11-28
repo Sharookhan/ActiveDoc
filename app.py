@@ -6,7 +6,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = 'Thisisthesecretkey'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://fntwhugnbcksel:eb206c4c5286a6a44e0cc300e10d9adbd0b110bbda3fcb1e142dd5376149d982@ec2-52-202-66-191.compute-1.amazonaws.com:5432/d8ef42tm3os6ai'
+app.config['SQLALCHEMY_DATABASE_URI'] = postgres://activedoc_user:koVVT3TmbDDDt4AdHER8TLwgDt1Pe6OG@dpg-clivvghll56s73fc2qo0-a.oregon-postgres.render.com/activedoc'
 #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost:3306/activedoc'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
