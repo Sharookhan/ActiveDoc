@@ -2,7 +2,6 @@
 click
 Flask
 Flask-SQLAlchemy
-freeze
 gunicorn
 itsdangerous
 Jinja2
